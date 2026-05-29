@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Happy Paws Pet Adoption | Contact Us</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">HP</span>
+        <span>Happy Paws</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu">Menu</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pets.html">Available Pets</a>
+        <a href="adoption.html">Adoption Info</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="development.html">Development</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Contact Us</h1>
+      <p>
+        If you’d like to adopt, volunteer, or just ask something small, send us a message.
+        We’ll reply as soon as we can.
+      </p>
+    </section>
+
+    <section class="section grid two-col">
+      <article class="card">
+        <div class="card-body">
+          <h3>Send a message</h3>
+
+          <p class="privacy-note">
+            <strong>Privacy notice:</strong> We collect your name and email only to respond to your enquiry.
+            In a real website, this data would be stored securely and never shared without consent.
+          </p>
+
+          <form action="thankyou.html" method="GET">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div>
+              <label for="comments">Comments</label>
+              <textarea id="comments" name="comments" placeholder="Tell us which pet you're interested in, or ask a question..." required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit message</button>
+          </form>
+        </div>
+      </article>
+
+      <aside class="card">
+        <div class="card-body">
+          <h3>Other ways to reach us</h3>
+          <p class="small">
+            Email: hello@happypaws.com<br />
+            Phone: (03) 0210 0670<br />
+            Hours: Mon–Sat, 10am–5pm
+          </p>
+
+          <h3>Enquiry tips</h3>
+          <ul class="small">
+            <li>Include your suburb and whether you rent or own.</li>
+            <li>Mention any other pets at home.</li>
+            <li>Let us know your daily schedule (helps with matching).</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small">
+      © 2026 Happy Paws Pet Adoption (Student Project). Built for BN109.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<html>
+<head><title>IFA Assignment(1)<\title)
+<body>
+<h1>H<h1><subscript>2<\subscript><h1>O<h1><br>
+<h1>CO<h1><subscript>2<\subscript><br>
+<h1>a<h1><superscript>2<\superscript><h1>b<h1><superscript>2<\superscript>
+<\body)
+<\html>

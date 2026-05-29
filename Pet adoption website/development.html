@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Paws Pet Adoption | Development & Compliance</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">HP</span>
+        <span>Happy Paws</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu">Menu</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pets.html">Available Pets</a>
+        <a href="adoption.html">Adoption Info</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="development.html">Development</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Development & Compliance</h1>
+      <p>
+        This page explains how the website was planned, designed, developed, and tested.
+        It also covers privacy, security, copyright, and content appropriateness.
+      </p>
+    </section>
+
+    <section class="section grid two-col">
+      <article class="card">
+        <div class="card-body">
+          <h3>Project overview</h3>
+          <p class="small">
+            The goal of this project was to create a simple, welcoming website for a local animal rescue
+            called “Happy Paws Pet Adoption”. The site is designed for first-time visitors who want to
+            learn about the organisation, view available pets, understand the adoption process, and send
+            a message through a contact form.
+          </p>
+
+          <h3>Features</h3>
+          <ul class="small">
+            <li>Consistent navigation menu across all pages</li>
+            <li>Full-screen hero section on the Home page with a background image</li>
+            <li>Responsive layout (works on desktop, tablet, and mobile)</li>
+            <li>Available Pets page with simple “pet cards” (image, name, age, short description)</li>
+            <li>Contact form that redirects to a Thank You page after submission</li>
+            <li>Privacy notice on the Contact page</li>
+          </ul>
+
+          <h3>Technologies used</h3>
+          <ul class="small">
+            <li>HTML5 (page structure and content)</li>
+            <li>CSS3 (Bondi Blue colour palette, layout, spacing, responsive design)</li>
+            <li>JavaScript (small script for mobile navigation toggle)</li>
+          </ul>
+
+          <h3>How the project works</h3>
+          <p class="small">
+            This is a static website, so there is no real database or server-side form handling.
+            The contact form uses a simple HTML <em>action</em> that loads <strong>thankyou.html</strong>
+            after the user submits the message. This matches the assignment requirement to show a Thank You page.
+          </p>
+        </div>
+      </article>
+
+      <aside class="card">
+        <div class="card-body">
+          <h3>Design decisions</h3>
+          <p class="small">
+            I chose a Bondi Blue theme because it feels friendly, clean, and fits a community rescue vibe.
+            The layout is intentionally simple: clear headings, generous spacing, and consistent card sections
+            so the content is easy to scan.
+          </p>
+
+          <p class="small">
+            For responsiveness, I used flexible grids and a mobile menu toggle. I avoided complicated frameworks
+            because the goal was clean, beginner-friendly code.
+          </p>
+
+          <h3>Challenges faced</h3>
+          <ul class="small">
+            <li>Keeping the design modern without making the code too complex</li>
+            <li>Making the navigation work nicely on smaller screens</li>
+            <li>Ensuring images looked consistent across different screen sizes</li>
+          </ul>
+
+          <h3>Conclusion</h3>
+          <p class="small">
+            Overall, the website meets the scenario requirements and stays simple enough to understand and maintain.
+            If this were a real rescue site, the next step would be adding a backend for real pet listings and secure
+            form handling.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="card-body">
+          <h3>Planning notes & simple site map</h3>
+          <p class="small">
+            I started by listing the required pages and deciding what each page needs to do. Then I wrote short notes
+            for each page so I wouldn’t end up with empty sections.
+          </p>
+
+          <p class="small"><strong>Site map:</strong></p>
+          <ul class="small">
+            <li>Home (index.html)</li>
+            <li>About Us (about.html)</li>
+            <li>Available Pets (pets.html)</li>
+            <li>Adoption Information (adoption.html)</li>
+            <li>Gallery (gallery.html)</li>
+            <li>Contact Us (contact.html) → submits to Thank You (thankyou.html)</li>
+            <li>Development & Compliance (development.html)</li>
+          </ul>
+
+          <p class="small"><strong>Wireframe (quick description):</strong></p>
+          <ul class="small">
+            <li>Top: sticky header with logo + navigation</li>
+            <li>Main: page title + content sections using card layout</li>
+            <li>Bottom: simple footer</li>
+            <li>Home page: full-screen hero with buttons to key pages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="card-body">
+          <h3>Testing summary</h3>
+          <p class="small">
+            Before final submission, I tested the website manually using different screen sizes (desktop, tablet,
+            and mobile view in browser dev tools).
+          </p>
+
+          <ul class="small">
+            <li><strong>Page links:</strong> Clicked every navigation link on every page to confirm they work.</li>
+            <li><strong>Navigation:</strong> Checked that the menu collapses on smaller screens and expands using the Menu button.</li>
+            <li><strong>Images:</strong> Verified all image paths are correct and images load; added alt text for accessibility.</li>
+            <li><strong>Form submission behaviour:</strong> Submitted the form on Contact Us and confirmed it loads thankyou.html and the Home button works.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="card-body">
+          <h3>Privacy, security, copyright, and content appropriateness</h3>
+
+          <h4>Privacy issue</h4>
+          <p class="small">
+            The contact form collects personal information (name and email). Even for a simple enquiry form, users should
+            know why the data is being collected. I included a short privacy notice on the Contact Us page explaining the purpose.
+          </p>
+
+          <h4>Security issue</h4>
+          <p class="small">
+            A real website must protect user data and prevent misuse (for example, spam submissions or storing data insecurely).
+            This project is static (no database), but I still used appropriate form input types (email) and required fields to
+            reduce obvious invalid input. In a real deployment, the form should be processed server-side with validation and secure storage.
+          </p>
+
+          <h4>Copyright issue</h4>
+          <p class="small">
+            Website images must be copyright-safe. I would use my own photos or images from free-to-use sources (e.g. Unsplash/Pexels)
+            and keep a small credit list. For submission, I would also avoid copying text from other websites and write content in my own words.
+          </p>
+
+          <h4>Censorship / content-appropriateness issue</h4>
+          <p class="small">
+            Public websites should avoid graphic or distressing content (for example, severe injury photos) because it can be upsetting,
+            especially for children. For this website, I kept the gallery and pet images positive and family-friendly, and used neutral,
+            respectful language throughout.
+          </p>
+
+          <h4>Image credits (example format)</h4>
+          <p class="small">
+            Add your real image credits here (only if needed), for example:<br />
+            “hero.png” Photo by [Photographer Name], Unsplash.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small">
+      © 2026 Happy Paws Pet Adoption (Student Project). Built for BN109.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Discover Nepal — Beauty of the Himalaya</title>
+  <style>
+
+
+:root {
+  --bg: #07222c;                /* night sky */
+  --panel: #111317;             /* deep slate */
+  --muted: #a9b2bd;             /* cool gray */
+  --text: #f3f6fb;              /* near white */
+  --accent: #e8b66a;            /* warm saffron */
+  --accent-2: #82c9ff;          /* glacial blue */
+  --border: rgba(255, 255, 255, .08);
+
+  --radius: 20px;
+  --radius-lg: 28px;
+  --shadow: 0 20px 45px rgba(0, 0, 0, .45);
+
+  --max: 1240px;
+}
+
+/* ===========================
+   Reset & Base
+=========================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(232,182,106,.08), transparent 60%),
+              radial-gradient(1000px 700px at 100% 120%, rgba(130,201,255,.10), transparent 60%),
+              var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===========================
+   Utilities
+=========================== */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 22px;
+}
+
+.tag {
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ===========================
+   Buttons
+=========================== */
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #2a1d0c;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(232,182,106,.25);
+  transition: transform .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.alt {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+/* ===========================
+   Header
+=========================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px) saturate(150%);
+  background: rgba(10,11,13,.55);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(from 210deg, var(--accent), var(--accent-2));
+  color: #151515;
+  font-weight: 900;
+}
+
+nav a {
+  margin: 0 14px;
+  opacity: .9;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: url('nepal.png') center/cover no-repeat;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 0 20px;
+  color: white;
+}
+
+.headline {
+  font-family: Marcellus, serif;
+  font-size: clamp(38px, 5vw, 74px);
+  line-height: 1.03;
+  margin: 0 0 10px;
+}
+
+.lede {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(16px, 1.3vw, 18px);
+}
+
+.hero-cta a.btn {
+  background-color: rgba(255, 200, 100, 0.9);
+  color: #000;
+  padding: 12px 24px;
+  border-radius: var(--radius-lg);
+  font-weight: bold;
+}
+
+/* ===========================
+   Sections & Panels
+=========================== */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-family: Marcellus, serif;
+  font-size: clamp(28px, 3vw, 44px);
+}
+
+.feature-grid {
+  grid-template-columns: 1fr;
+}
+
+.panel {
+  background: linear-gradient(180deg, #14171b, #101215);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.panel.padded {
+  padding: 22px;
+}
+
+/* ===========================
+   Gallery
+=========================== */
+.gallery {
+  grid-template-columns: 1fr;
+}
+
+figure.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: #0f1013;
+}
+
+figure.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+figure.card:hover img {
+  transform: scale(1.05);
+}
+
+figure.card figcaption {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px 12px;
+
+  background: rgba(10,11,13,.55);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.place {
+  font-weight: 700;
+}
+
+.region {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ===========================
+   Info Blocks
+=========================== */
+.stats {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stat {
+  padding: 26px;
+  text-align: center;
+}
+
+.stat h4 {
+  margin: 0;
+  font-size: 40px;
+  font-family: Marcellus, serif;
+}
+
+.stat p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  color: var(--muted);
+}
+
+/* ===========================
+   Chips
+=========================== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  font-weight: 600;
+}
+
+/* ===========================
+   Media Queries
+=========================== */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .feature-grid {
+    grid-template-columns: 1.2fr .8fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1100px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Discover Nepal home">
+        <div class="logo">NP</div>
+        <strong>Discover Nepal</strong>
+      </a>
+      <nav>
+        <a href="#destinations">Destinations</a>
+        <a href="#treks">Treks</a>
+        <a href="#culture">Culture</a>
+        <a href="#Ending">Description</a>
+      </nav>
+    </div>
+  </header>
+
+<!--First UI of Page-->
+ <section id="home" class="hero section">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <span class="tag">Himalaya • Heritage • Wildlife</span>
+      <h1 class="headline">The beauty of Nepal — from stupas to summits.</h1>
+      <p class="lede">Explore sacred sites, snow-capped giants, jungle safaris and serene lakes. From sunrise over Mount Everest to the tranquil shores of Fewa Lake, its beauty is both breathtaking and timeless.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#destinations">View Destinations</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Little Discription about Nepal -->
+  <section class="section">
+    <div class="container grid feature-grid">
+      <div class="panel">
+        <img src="Fewalake.jpg" alt="Phewa Lake in Pokhara with colorful boats" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius)"/>
+      </div>
+      <div class="panel padded">
+        <span class="tag">Why Nepal?</span>
+        <h2 style="font-family:Marcellus,serif; margin:8px 0 6px">A mosaic of mountains, jungles and living heritage.</h2>
+        <p class="muted">From the prayer wheels of Boudhanath to the rhinos of Chitwan, Nepal compresses breathtaking variety into a compact land. Scroll through curated images — each labeled with its name — perfect for posters or slides.</p>
+        <div class="chips" style="margin-top:12px">
+          <div class="chip">UNESCO Heritage</div>
+          <div class="chip">Eight 8,000ers</div>
+          <div class="chip">Wildlife Safaris</div>
+          <div class="chip">Tea Hills</div>
+          <div class="chip">Sacred Lakes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations gallery -->
+  <section id="destinations" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="tag">Destinations</span>
+          <h2>Iconic places across Nepal</h2>
+        </div>
+        <p class="muted" style="max-width:520px">Nepal—where the mountains touch the sky and history whispers through every valley.</p>
+      </div>
+
+      
+      <div class="grid gallery">
+
+        <!-- Boudhanath (Boudha) -->
+        <figure class="card">
+          <img src="boudha.jpg" alt="Boudhanath Stupa"/>
+          <figcaption><div class="place">Boudhanath Stupa</div><div class="region">Kathmandu</div></figcaption>
+        </figure>
+        <!-- Pashupatinath -->
+        <figure class="card">
+          <img src="pashupatinath.jpg" alt="Pashupatinath Temple"/>
+          <figcaption><div class="place">Pashupatinath Temple</div><div class="region">Kathmandu</div></figcaption>
+        </figure>
+        <!-- Durbar Squares -->
+        <figure class="card">
+          <img src="kathmandu-durbar-square-29-95461.jpg" alt="Kathmandu Durbar Square"/>
+          <figcaption><div class="place">Kathmandu Durbar Square</div><div class="region">UNESCO Heritage</div></figcaption>
+        </figure>
+        <figure class="card">
+          <img src="patandurbarsquare.jpg" alt="Patan Durbar Square"/>
+          <figcaption><div class="place">Patan Durbar Square</div><div class="region">Lalitpur</div></figcaption>
+        </figure>
+        <figure class="card">
+          <img src="bhaktapurdurbarsquare.jpg" alt="Bhaktapur Durbar Square"/>
+          <figcaption><div class="place">Bhaktapur Durbar Square</div><div class="region">Bhaktapur</div></figcaption>
+        </figure>
+        <!-- Kanyam / Ilam -->
+        <figure class="card">
+          <img src="Kanyam-ilam_resize.jpg" alt="Kanyam Tea Gardens"/>
+          <figcaption><div class="place">Kanyam Tea Gardens</div><div class="region">Ilam</div></figcaption>
+        </figure>
+        <!-- Mustang -->
+        <figure class="card">
+          <img src="upper-mustang-trek.webp" alt="Upper Mustang"/>
+          <figcaption><div class="place">Upper Mustang</div><div class="region">Lo Manthang</div></figcaption>
+        </figure>
+        <!-- Everest Base Camp (EBC) -->
+        <figure class="card">
+          <img src="EBC.jpeg" alt="Everest Base Camp"/>
+          <figcaption><div class="place">Everest Base Camp (EBC)</div><div class="region">Khumbu</div></figcaption>
+        </figure>
+        <!-- Annapurna Base Camp (ABC) -->
+        <figure class="card">
+          <img src="ABC.jpg" alt="Annapurna Base Camp"/>
+          <figcaption><div class="place">Annapurna Base Camp (ABC)</div><div class="region">Annapurna Sanctuary</div></figcaption>
+        </figure>
+        <!-- Manang -->
+        <figure class="card">
+          <img src="manang.jpg" alt="Manang"/>
+          <figcaption><div class="place">Manang</div><div class="region">Annapurna Circuit</div></figcaption>
+        </figure>
+        <!-- Phoksundo Lake -->
+        <figure class="card">
+          <img src="shephoksundolake.webp" alt="Phoksundo Lake"/>
+          <figcaption><div class="place">Phoksundo Lake</div><div class="region">Dolpa</div></figcaption>
+        </figure>
+        <!-- Pokhara -->
+        <figure class="card">
+          <img src="Pokhara-2025.jpg" alt="Pokhara city and Phewa Lake"/>
+          <figcaption><div class="place">Pokhara & Phewa Lake</div><div class="region">Kaski</div></figcaption>
+        </figure>
+        <!-- Kusma Bridge / Parbat -->
+        <figure class="card">
+          <img src="kusma.jpg" alt="Kusma Bridge"/>
+          <figcaption><div class="place">Kusma Gyadi Bridge</div><div class="region">Parbat</div></figcaption>
+        </figure>
+        <!-- Lumbini -->
+        <figure class="card">
+          <img src="lumbini.jpg" alt="Lumbini"/>
+          <figcaption><div class="place">Lumbini</div><div class="region">Birthplace of Buddha</div></figcaption>
+        </figure>
+        <!-- Chitwan National Park -->
+        <figure class="card">
+          <img src="national park.jpg" alt="Chitwan National Park"/>
+          <figcaption><div class="place">Chitwan National Park</div><div class="region">Terai</div></figcaption>
+        </figure>
+        <!-- Terai of Nepal -->
+        <figure class="card">
+          <img src="terai.jpg" alt="Terai plains"/>
+          <figcaption><div class="place">Terai Plains</div><div class="region">Southern Belt</div></figcaption>
+        </figure>
+        <!-- Rara Lake -->
+        <figure class="card">
+          <img src="Rara lake Jeep tour.jpg" alt="Rara Lake"/>
+          <figcaption><div class="place">Rara Lake</div><div class="region">Mugu</div></figcaption>
+        </figure>
+        <!-- Langtang Valley -->
+        <figure class="card">
+          <img src="Langtang-Valley-Trek-1.jpg" alt="Langtang Valley"/>
+          <figcaption><div class="place">Langtang Valley</div><div class="region">Rasuwa</div></figcaption>
+        </figure>
+        <!-- Gosaikunda -->
+        <figure class="card">
+          <img src="gosaikunda.webp" alt="Gosaikunda"/>
+          <figcaption><div class="place">Gosaikunda</div><div class="region">Langtang Region</div></figcaption>
+        </figure>
+        <!-- Bandipur -->
+        <figure class="card">
+          <img src="bandipur.jpg" alt="Bandipur"/>
+          <figcaption><div class="place">Bandipur</div><div class="region">Tanahun</div></figcaption>
+        </figure>
+        <!-- Janakpur -->
+        <figure class="card">
+          <img src="Janaki-Mandir.jpg" alt="Janaki Mandir"/>
+          <figcaption><div class="place">Janakpur (Janaki Mandir)</div><div class="region">Madhesh</div></figcaption>
+        </figure>
+        <!-- Gorkha -->
+        <figure class="card">
+          <img src="gorkha.jpg" alt="Gorkha"/>
+          <figcaption><div class="place">Gorkha palace</div><div class="region">Gorkha</div></figcaption>
+        </figure>
+        <!-- Nagarkot -->
+        <figure class="card">
+          <img src="nagarkot-875-500.webp" alt="Nagarkot"/>
+          <figcaption><div class="place">Nagarkot</div><div class="region">Bhaktapur</div></figcaption>
+        </figure>
+        <!-- Ghandruk Village -->
+        <figure class="card">
+          <img src="1024px-Ghandruk_village.jpg" alt="Ghandruk"/>
+          <figcaption><div class="place">Ghandruk Village</div><div class="region">Kaski</div></figcaption>
+        </figure>
+        <!-- Khaptad National Park -->
+        <figure class="card">
+          <img src="khapthad.jpg" alt="Khaptad"/>
+          <figcaption><div class="place">Khaptad National Park</div><div class="region">Far‑West</div></figcaption>
+        </figure>
+        <!-- Tilicho Lake -->
+        <figure class="card">
+          <img src="tilicho-lake-trek.jpg" alt="Tilicho Lake"/>
+          <figcaption><div class="place">Tilicho Lake</div><div class="region">Manang</div></figcaption>
+        </figure>
+        <!-- Barun Valley / Makalu -->
+        <figure class="card">
+          <img src="barun-valley-trek.jpg" alt="Barun Valley"/>
+          <figcaption><div class="place">Barun Valley</div><div class="region">Makalu Region</div></figcaption>
+        </figure>
+        <!-- Kuri Village -->
+        <figure class="card">
+          <img src="Kuri_Village.jpg" alt="Kuri Village"/>
+          <figcaption><div class="place">Kuri Village</div><div class="region">Dolakha</div></figcaption>
+        </figure>
+        <!-- Dharan -->
+        <figure class="card">
+          <img src="Dharan.jpg" alt="Dharan"/>
+          <figcaption><div class="place">Dharan</div><div class="region">Koshi</div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treks & Parks -->
+  <section id="treks" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="tag">Treks • Parks</span>
+          <h2>National Parks and Himalayan Trails</h2>
+        </div>
+        <a class="btn alt">Land of Himalayas</a>
+      </div>
+
+      <div class="grid stats panel">
+        <div class="stat">
+          <h4>8,848 m</h4>
+          <p>Mt. Everest (Sagarmatha)</p>
+        </div>
+        <div class="stat">
+          <h4>12+</h4>
+          <p>Major National Parks</p>
+        </div>
+        <div class="stat">
+          <h4>1,300+</h4>
+          <p>Bird Species</p>
+        </div>
+        <div class="stat">
+          <h4>100s</h4>
+          <p>Treks & Routes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture -->
+  <section id="culture" class="section">
+    <div class="container grid feature-grid">
+      <div class="panel padded">
+        <span class="tag">Culture</span>
+        <h2 style="font-family:Marcellus,serif; margin:8px 0 6px">Living heritage and festivals</h2>
+        <p class="muted">The Kathmandu Valley preserves exquisite Newar craftsmanship, while monasteries and temples across Nepal celebrate 
+          festivals like Indra Jatra, Lhosar and Chhath. Architecture, art and daily life mingle in every alley.Nepal is a country rich in 
+          festivals and culture, where traditions are deeply rooted in history and celebrated with great enthusiasm. Major festivals like 
+          Dashain, Tihar, Holi, and Indra Jatra bring together people of all communities in joy and unity. These festivals often blend Hindu
+           and Buddhist traditions, reflecting Nepal’s cultural harmony. The history of Nepal’s culture is closely tied to its ancient kingdoms, 
+           each leaving behind unique art, music, and architecture. The Durbar Squares of Kathmandu, Patan, and Bhaktapur are prime examples of
+            this heritage, showcasing magnificent palaces, temples, and courtyards built during the Malla period. These squares are UNESCO World
+            Heritage Sites and stand as symbols of Nepal’s architectural brilliance. They host vibrant festivals like Kumari Jatra, where the 
+            living goddess is paraded through the streets. The intricate wood carvings and pagoda-style temples in Durbar Square reveal the
+             craftsmanship of centuries past. Visitors can witness both the sacred rituals and everyday life blending seamlessly in these 
+             historic spaces. Together, Nepal’s festivals and the grand buildings of Durbar Square create a living museum of culture, history,
+              and tradition.Thus, the festivals and Durbar Squares of Nepal together preserve and showcase the nation’s timeless cultural and 
+              historical identity.</p>
+        <div class="chips" style="margin-top:12px">
+          <div class="chip">Pagoda Temples</div>
+          <div class="chip">Buddhist Monasteries</div>
+          <div class="chip">Newar Towns</div>
+          <div class="chip">Thangka & Woodwork</div>
+        </div>
+      </div>
+      <div class="panel">
+        <img src="Kathmandu in festival.jpg" alt="Festival lights in Nepal" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius)"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="Ending" class="section">
+    <div class="container">
+      <div class="panel padded" style="display:grid; gap:14px">
+        <h3 style="margin:0">- Heaven is Myth , Nepal is Real -</h3>
+        <p class="muted">Nepal, the land of majestic Himalayas and vibrant cultural heritage, offers breathtaking landscapes and timeless 
+          traditions. From serene temples to thrilling mountain adventures, every corner invites you to experience beauty beyond imagination.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="#destinations">Back to Destinations</a>
+          <a class="btn alt" href="mailto:hello@example.com">Namaste</a>
+        </div>
+        <small class="muted">Thank you For visiting.</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div> <span id="year"></span> Discover Nepal</div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+removed  
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 0 20px;
+  color: white;
+}
+
+.hero-cta a.btn {
+  background-color: rgba(255, 200, 100, 0.9);
+  color: #000;
+  padding: 12px 24px;
+  border-radius: var(--radius-lg);
+  font-weight: bold;
+}
+
+
+
+section part 
+
+.feature-grid {
+  grid-template-columns: 1fr;
+}
