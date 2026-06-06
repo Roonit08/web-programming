@@ -1,43 +1,45 @@
-/* =========================
-   Base / Reset
-========================= */
+
+/* BASE / RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* padding is included in the element so that it will be easy to work with */
 }
 
+/* Smooth scrolling so clicking nav links can glide down instead of jumping */
 html { scroll-behavior: smooth; }
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* a clean, readable stack */
+  color: #333;    
+  line-height: 1.6; 
 }
 
-/* =========================
-   Reusable helpers
-========================= */
+/* REUSABLE HELPERS */
+/* Keeps content centred and caps the width so it doesnot stretch too wide on big monitors */
 .container {
-  width: min(1100px, 92%);
+  width: min(1100px, 92%);  
   margin: 0 auto;
 }
 
+/* Standard vertical breathing room for every section */
 .section {
   padding: 70px 0;
 }
 
+/* Light grey background for alternate sections and also creates a visual rhythm as you scroll */
 .section-alt {
   background: #f7f7f7;
 }
 
+/* Shared heading style used by nearly every section on the page */
 .section-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #1a1a2e;
+  color: #1a1a2e; /* the dark navy brand colour */
 }
 
+/* The smaller descriptive line that sits just below each section title */
 .section-subtitle {
   text-align: center;
   color: #777;
@@ -45,39 +47,45 @@ body {
   font-size: 1rem;
 }
 
+/* CSS Grid shorthand and all card and tile layouts inherit from this */
 .grid {
   display: grid;
   gap: 25px;
 }
 
+/* Base styles shared by all button variants and only the colour changes per variant */
 .btn {
   display: inline-block;
   padding: 12px 20px;
-  border-radius: 30px;
+  border-radius: 30px;   /* pill shape */
   text-decoration: none;
   font-weight: 700;
   border: 2px solid transparent;
 }
 
+/* Golden filled button and the strongest call to action */
 .btn-primary {
   background: #f0a500;
   color: #1a1a2e;
 }
 
-.btn-primary:hover { filter: brightness(0.95); }
+.btn-primary:hover { filter: brightness(0.95); } /* subtle dimming on hover */
 
+/* Ghost button which is transparent with a white border, used on the dark hero background */
 .btn-outline {
   border-color: #fff;
   color: #fff;
 }
 
+/* On hover it fills white so it feels solid and clickable */
 .btn-outline:hover {
   background: #fff;
   color: #1a1a2e;
 }
 
+/* Solid dark button used for the contact form submit and stands out against the light form background */
 .btn-dark {
-  width: 100%;
+  width: 100%;         /* stretches full width of the form */
   background: #1a1a2e;
   color: #fff;
   border-radius: 8px;
@@ -87,14 +95,13 @@ body {
   font-size: 1rem;
 }
 
+/* Turns golden on hover and mirrors the brand accent colour for a satisfying interaction */
 .btn-dark:hover {
   background: #f0a500;
   color: #1a1a2e;
 }
 
-/* =========================
-   Navbar (sticky)
-========================= */
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -102,6 +109,7 @@ body {
   background: #1a1a2e;
 }
 
+/* Inner row that holds the logo and the links side by side */
 .nav-container {
   width: min(1100px, 92%);
   margin: 0 auto;
@@ -110,9 +118,10 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
 }
 
+/* The brand name or logo on the left side of the navigation bar */
 .brand {
   color: #fff;
   font-size: 1.35rem;
@@ -121,8 +130,10 @@ body {
   text-decoration: none;
 }
 
+/* The word "Wings" gets the golden accent colour to break up the brand name */
 .brand span { color: #f0a500; }
 
+/* The list of navigation links on the right side */
 .nav-links {
   list-style: none;
   display: flex;
@@ -130,200 +141,204 @@ body {
   flex-wrap: wrap;
 }
 
+/* Individual nav link styling and grey by default, golden on hover */
 .nav-links a {
   color: #ccc;
   text-decoration: none;
   padding: 10px 12px;
   border-radius: 10px;
-  transition: 0.2s;
+  transition: 0.2s; /* smooth colour change rather than a instant switch */
   font-size: 0.95rem;
 }
-
 .nav-links a:hover {
   color: #f0a500;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.06); /* a faint white highlight behind the hovered link */
 }
 
-/* =========================
-   Hero (FULL SCREEN like your example)
-========================= */
+/* HERO SECTION */
 .hero {
-  background: url("../images/Home\ Page\ image.png") center/cover no-repeat;
-  height: 100vh;
-  min-height: 100vh;
+  background: url("../images/Home\ Page\ image.png") center/cover no-repeat; /* adds the image in the background at the first section */
+  height: 100vh;     
+  min-height: 100vh; 
   position: relative;
 }
 
+/* The dark gradient layer that sits between the photo and the text */
 .hero-overlay {
   height: 100vh;
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55));
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)); 
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically centres the content block */
 }
 
+/* The actual text and buttons inside the hero and left-aligned and capped at a readable width */
 .hero-content {
   width: min(900px, 92%);
   margin: 0 auto;
   color: #fff;
   text-align: left;
-  padding: 90px 0 60px; /* pushes content slightly down */
+  padding: 90px 0 60px; /* top padding pushes the text down slightly from the navbar */
 }
 
+/* clamp sets a fluid font size */
 .hero-content h1 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.15;
   margin-bottom: 14px;
 }
 
+/* The subtitle paragraph that is kept narrower than the heading so it doesn't stretch too wide */
 .hero-content p {
   font-size: 1.1rem;
   opacity: 0.95;
   margin-bottom: 22px;
-  max-width: 60ch;
+  max-width: 60ch; 
 }
 
-/* =========================
-   About
-========================= */
+/* ABOUT SECTION */
 .about-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
-  align-items: center;
+  align-items: center; /* keeps the text and image vertically centred with each other */
 }
-
 .about-text h2 {
   font-size: 1.8rem;
   color: #1a1a2e;
   margin-bottom: 12px;
 }
 
+/* Row of three stat boxes below the about text */
 .stats {
   display: flex;
   gap: 22px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stacks them if the screen is too narrow */
   margin-top: 18px;
 }
 
+/* The big number in each stat box and golden color to make it unique*/
 .stat h3 {
   font-size: 1.8rem;
   color: #f0a500;
   text-align: center;
 }
 
+/* The label below each number */
 .stat p {
   font-size: 0.9rem;
   color: #777;
   text-align: center;
 }
 
+/* The about photo and rounded corners and a soft shadow to lift it off the background */
 .about-image img {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* =========================
-   Destination cards
-========================= */
+/* DESTINATION CARDS */
 .cards {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* Each individual destination card */
 .card {
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden;   /* clips the photo corners so they follow the card's border-radius */
   box-shadow: 0 4px 15px rgba(0,0,0,0.10);
   background: #fff;
-  transition: transform 0.25s;
+  transition: transform 0.25s; /* smooth animation for the hover lift effect */
 }
 
+/* Lifts the card up slightly when hovered and gives a nice interactive feel */
 .card:hover { transform: translateY(-6px); }
 
+/* Destination photo at the top of the card with the fixed height keeps all cards the same size */
 .card img {
   width: 100%;
   height: 190px;
-  object-fit: cover;
+  object-fit: cover; /* crops the image to fill the space without stretching or squashing it */
 }
 
+/* The text content area below the image */
 .card-body { padding: 18px; }
-
 .card-body h3 {
   font-size: 1.1rem;
   color: #1a1a2e;
   margin-bottom: 6px;
 }
-
 .card-body p {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 10px;
 }
-
 .price {
   font-weight: 800;
   color: #f0a500;
 }
 
-/* =========================
-   Services
-========================= */
+/* SERVICES SECTION */
 .section-dark {
   background: #1a1a2e;
   color: #fff;
 }
 
+/* These two classes flip the title and subtitle to light colours so they remain readable on the dark background */
 .section-title.light { color: #fff; }
 .section-subtitle.light { color: #b8b8b8; }
 
+/* Same responsive auto-fit grid as the cards, but minimum width is a bit smaller */
 .services {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+/* Individual service tile a slightly lighter navy so it contrasts with the section background */
 .service {
   background: #252545;
   border-radius: 12px;
   padding: 26px 18px;
-  transition: 0.25s;
+  transition: 0.25s; /* the colour change on hover animates smoothly */
 }
 
+/* On hover the tile turns golden and the text flips to dark,bold and memorable */
 .service:hover {
   background: #f0a500;
   color: #1a1a2e;
 }
-
 .service h3 { margin-bottom: 10px; }
-.service p { opacity: 0.9; }
+.service p { opacity: 0.9; } /* slightly transparent text that softens the look on the dark tiles */
 
-/* =========================
-   Offers (badges removed)
-========================= */
+/* SPECIAL OFFERS SECTION */
 .section-offers {
   background: #fff8ee;
 }
 
+/* Offer cards use the same responsive auto-fit approach as destinations */
 .offers {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* Individual offer card and the left border is the key visual element */
 .offer {
   background: #fff;
   border-radius: 12px;
   padding: 22px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  border-left: 5px solid #f0a500;
+  border-left: 5px solid #f0a500; /* thick golden stripe on the left that instantly signals "deal" */
 }
-
 .offer h3 { color: #1a1a2e; margin-bottom: 10px; }
 .offer p { color: #666; margin-bottom: 12px; }
 
+/* The price display row and the big and golden so it grabs attention of the users */
 .offer-price {
   font-size: 1.2rem;
   font-weight: 900;
   color: #f0a500;
 }
 
+/* The crossed-out original price sits to the left of the new price */
 .offer-price del {
   color: #aaa;
   font-weight: 500;
@@ -331,13 +346,12 @@ body {
   font-size: 0.95rem;
 }
 
-/* =========================
-   Contact
-========================= */
+/* FORM SECTION */
 .contact {
-  max-width: 780px;
+  max-width: 780px; /* constrains the form width even within the section container */
 }
 
+/* The white card that wraps all the form fields */
 .contact-form {
   background: #fff;
   padding: 40px;
@@ -345,20 +359,23 @@ body {
   box-shadow: 0 6px 25px rgba(0,0,0,0.10);
 }
 
+/* A flex row that places two form fields side by side and also wraps on small screens */
 .form-row {
   display: flex;
   gap: 18px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* on mobile each field drops to full width */
 }
 
+/* Each label and the input pair stacks vertically using flex-direction */
 .form-group {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-width: 220px;
+  flex: 1;             /* each group grows equally to fill the available space */
+  min-width: 220px;    /* prevents fields from getting uncomfortably narrow */
   margin-bottom: 16px;
 }
 
+/* Field labels are slightly bold so they stand out from the placeholder text */
 label {
   font-size: 0.92rem;
   font-weight: 700;
@@ -366,58 +383,66 @@ label {
   margin-bottom: 6px;
 }
 
+/* Shared styling for all three input types: text, dropdown, and textarea */
 input, select, textarea {
   padding: 12px 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 0.95rem;
-  font-family: inherit;
+  font-family: inherit; 
 }
 
+/* When the user clicks into a field, the border turns golden to match the brand colour */
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: #f0a500;
 }
 
+/* The message textarea can be resized vertically but not horizontally */
 textarea {
   resize: vertical;
   min-height: 110px;
 }
 
-/* =========================
-   Footer
-========================= */
+/*  FOOTER */
 .footer {
   background: #1a1a2e;
-  color: #aaa;
+  color: #aaa;   
   text-align: center;
   padding: 22px 10px;
   font-size: 0.9rem;
 }
 
-/* =========================
-   Responsive
-========================= */
+/* RESPONSIVE STYLES */
+/* Tablet and small laptop breakpoint */
 @media (max-width: 900px) {
+
+  /* The about section's two columns collapse into a single stacked column */
   .about-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Hero text centres itself now that the layout is single-column */
   .hero-content {
     text-align: center;
   }
 
+  /* Re-centres the hero subtitle paragraph which has a max-width set */
   .hero-content p {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
+/* Phone breakpoint where small tweaks to keep things comfortable on narrow screens */
 @media (max-width: 520px) {
+
+  /* Less padding on the contact form so it doesn't feel cramped on small screens */
   .contact-form {
     padding: 26px 18px;
   }
 
+  /* On very narrow screens the navigation bar logo and links centre instead of spreading apart */
   .nav-container {
     justify-content: center;
   }
