@@ -157,7 +157,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-  background: url("../images/Home\ Page\ image.png") center/cover no-repeat; /* adds the image in the background at the first section */
+  background: url("Home\ Page\ image.png") center/cover no-repeat; /* adds the image in the background at the first section */
   height: 100vh;     
   min-height: 100vh; 
   position: relative;
